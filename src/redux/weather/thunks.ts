@@ -2,7 +2,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import type { ICurrentWeatherResponse, WeatherApiResponse } from "./types";
 
-const apiKey = import.meta.env.VITE_API_KEY;
+// const apiKey = import.meta.env.VITE_API_KEY;
+const apiKey = "761edf9be30e4bae9f7201528252511";
 const BASE_URL = "https://api.weatherapi.com/v1";
 
 export const getWetherByCity = createAsyncThunk<ICurrentWeatherResponse, string, { rejectValue: string }>("wether/getWetherByCity", async (city, thunkAPI) => {
