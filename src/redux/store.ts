@@ -12,16 +12,12 @@ import {
   REGISTER,
 } from "redux-persist";
 
-
 const persistConfig = {
   key: "weather",
   storage,
 };
 
-const persistedWeatherReducer = persistReducer(
-  persistConfig,
-  weatherReducer
-);
+const persistedWeatherReducer = persistReducer(persistConfig, weatherReducer);
 
 export const store = configureStore({
   reducer: {
@@ -36,3 +32,6 @@ export const store = configureStore({
 });
 
 export const persistor = persistStore(store);
+
+export type RootState = ReturnType<typeof store.getState>;
+export type AppDispatch = typeof store.dispatch;
