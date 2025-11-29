@@ -8,6 +8,7 @@
 }
 
 .error_img{
-	width: 60%;
+	width: 30%;
 	height: auto;
+  max-width: 30%;
 }
