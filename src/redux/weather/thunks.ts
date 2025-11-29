@@ -21,7 +21,7 @@ export const getWetherByCity = createAsyncThunk<ICurrentWeatherResponse, string,
 
       const data: ICurrentWeatherResponse = {
         current: response.data.current,
-        today: response.data.forecast.forecastday[0].hour,
+        day: response.data.forecast.forecastday[0].hour,
         future: response.data.forecast.forecastday,
         location: response.data.location,
       };
@@ -54,7 +54,7 @@ export const getWeatherByPosition = createAsyncThunk<ICurrentWeatherResponse,str
 
       const data: ICurrentWeatherResponse = {
         current: response.data.current,
-        today: response.data.forecast.forecastday[0].hour,
+        day: response.data.forecast.forecastday[0].hour,
         future: response.data.forecast.forecastday,
         location: response.data.location,
       };

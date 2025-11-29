@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import type { AppDispatch } from "./redux/store";
 import { getWeatherByPosition } from "./redux/weather/thunks";
 import { useGeolocation } from "./hooks/useGeolocation";
+import MainWidget from "./components/MainWidget/MainnWidget";
 
 function App() {
   const { position, error, getLocation } = useGeolocation();
@@ -20,7 +21,7 @@ function App() {
 
   return (
     <Container>
-      <div></div>
+      <MainWidget/>
     </Container>
   );
 }

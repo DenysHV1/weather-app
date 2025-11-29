@@ -1,26 +1,39 @@
+.loader_wrapper{
+  position: relative;
+  width: 100%;
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .loader {
-  position: absolute;
+  position: relative;
   inset: 0;
   margin: auto;
   width: 87.5px;
   height: 40px;
   display: block;
   box-sizing: border-box;
+
   background-image:
     radial-gradient(circle 12.5px at 12.5px 12.5px, #FFF 100%, transparent 0),
     radial-gradient(circle 25px at 25px 25px, #FFF 100%, transparent 0),
     radial-gradient(circle 12.5px at 12.5px 12.5px, #FFF 100%, transparent 0),
     linear-gradient(#FFF 25px, transparent 0);
+
   background-size:
     25px 25px,
     50px 38px,
     25px 25px,
     60px 20px;
+
   background-position:
     0px 15px,
     18px 0px,
     61px 15px,
     12px 20px;
+
   background-repeat: no-repeat;
 }
 

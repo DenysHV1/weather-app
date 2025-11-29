@@ -1,14 +1,16 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { getWeatherByPosition, getWetherByCity } from "./thunks";
-import type { ICurrentWeatherResponse, IState } from "./types";
+import type { ICurrentWeatherResponse, IState, TemperatureUnit } from "./types";
 
 const initialState: IState = {
   isLoading: false,
   isError: false,
   location: null,
   current: null,
-  today: [],
+  day: [],
   future: [],
+
+  tempUnit: "C",
 };
 
 const handleError = (state: IState) => {
@@ -21,7 +23,7 @@ const handlePending = (state: IState) => {
   state.isError = false;
   state.location = null;
   state.current = null;
-  state.today = [];
+  state.day = [];
   state.future = [];
 };
 
@@ -32,14 +34,18 @@ const handleFulfilled = (
   state.isLoading = false;
   state.location = payload.location;
   state.current = payload.current;
-  state.today = payload.today;
+  state.day = payload.day;
   state.future = payload.future;
 };
 
 const weatherSlice = createSlice({
   name: "weather",
   initialState,
-  reducers: {},
+  reducers: {
+    setTempUnit(state: IState, {payload}: PayloadAction<TemperatureUnit>) {
+      state.tempUnit = payload;
+    },
+  },
   extraReducers: (builder) => {
     builder
       .addCase(getWetherByCity.pending, handlePending)
@@ -53,4 +59,4 @@ const weatherSlice = createSlice({
 });
 
 export const weatherReducer = weatherSlice.reducer;
-// export const {  } = weatherSlice.actions;
+export const { setTempUnit } = weatherSlice.actions;

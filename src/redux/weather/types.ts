@@ -1,11 +1,14 @@
-interface IWeatherObj {
+export interface IWeatherObj {
   condition: {
     text: string;
     icon: string;
   };
   temp_c: number;
+  temp_f: number;
   feelslike_c: number;
+  feelslike_f: number;
   wind_kph: number;
+  last_updated: string;
   time?: string;
   time_epoch?: number;
 }
@@ -15,13 +18,13 @@ interface IDay {
   hour: IWeatherObj[];
 }
 
-interface ILocation {
+export interface ILocation {
   country: string;
   name: string;
   region: string;
 }
 
-interface IFuture {
+export interface IFuture {
   date: string;
   hour: IWeatherObj[];
 }
@@ -36,16 +39,25 @@ export interface WeatherApiResponse {
 
 export interface ICurrentWeatherResponse {
   current: IWeatherObj;
-  today: IWeatherObj[];
+  day: IWeatherObj[];
   future: IFuture[];
   location: ILocation;
 }
+
+export const TemperatureUnit = {
+  C: "C",
+  F: "F",
+} as const;
+export type TemperatureUnit = typeof TemperatureUnit[keyof typeof TemperatureUnit];
+
+
 
 export interface IState {
   isLoading: boolean;
   isError: boolean;
   current: IWeatherObj | null;
-  today: IWeatherObj[] | null;
+  day: IWeatherObj[] | null;
   future: IFuture[] | [];
   location: ILocation | null;
+  tempUnit: TemperatureUnit;
 }
