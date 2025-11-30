@@ -4,8 +4,7 @@ import { selectIsError, selectIsLoading } from "../../redux/weather/selectors";
 import Loader from "../Loader/Loader";
 import ErrorComponent from "../ErrorComponent/ErrorComponent";
 import DayWeather from "./DayWeather/DayWeather";
-
-
+import FutureWeather from "./FutureWeather/FutureWeather";
 
 const MainWidget = () => {
   const isLoading = useSelector(selectIsLoading);
@@ -14,7 +13,7 @@ const MainWidget = () => {
   if (isLoading) {
     return (
       <div className="main-widget">
-        <Loader/>
+        <Loader />
       </div>
     );
   }
@@ -22,16 +21,19 @@ const MainWidget = () => {
   if (isError) {
     return (
       <div className="main-widget">
-        <ErrorComponent/>
+        <ErrorComponent />
       </div>
     );
   }
 
   return (
     <>
-      <div className="main-widget">
-        <CurrentWeather />
-        <DayWeather/>
+      <div>
+        <div className="main-widget">
+          <CurrentWeather />
+          <DayWeather />
+        </div>
+        <FutureWeather />
       </div>
     </>
   );

@@ -1,0 +1,112 @@
+.box {
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+.btn_active,
+.btn {
+  background: #2f3341;
+  border-radius: 0 0 30px 30px;
+  padding: 20px 40px;
+  margin-top: -10px;
+  @media screen and (max-width: 670px) {
+    padding: 20px 50px;
+  }
+  @media screen and (max-width: 622px) {
+    padding: 20px 40px;
+  }
+  @media screen and (max-width: 565px) {
+    padding: 20px 30px;
+  }
+  @media screen and (max-width: 420px) {
+    padding: 20px 50px;
+  }
+  @media screen and (max-width: 390px) {
+    padding: 20px 40px;
+  }
+  @media screen and (max-width: 355px) {
+    padding: 20px 30px;
+  }
+}
+
+.btn_active {
+  background: rgba(76, 80, 102, 0.523);
+}
+
+.day {
+  font-size: 30px;
+  font-weight: 600;
+  white-space: nowrap;
+  @media screen and (max-width: 1120px) {
+    font-size: 25px;
+  }
+  @media screen and (max-width: 860px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 21px;
+  }
+  @media screen and (max-width: 670px) {
+    font-size: 24px;
+  }
+  @media screen and (max-width: 460px) {
+    font-size: 18px;
+  }
+  @media screen and (max-width: 420px) {
+    font-size: 25px;
+  }
+}
+
+.icon {
+  width: 120px;
+  @media screen and (max-width: 1120px) {
+    width: 110px;
+  }
+  @media screen and (max-width: 860px) {
+    width: 80px;
+  }
+  @media screen and (max-width: 768px) {
+    width: 98px;
+  }
+  @media screen and (max-width: 670px) {
+    width: 100px;
+  }
+  @media screen and (max-width: 460px) {
+    width: 80px;
+  }
+  @media screen and (max-width: 420px) {
+    width: 100px;
+  }
+}
+
+.temp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  @media screen and (max-width: 860px) {
+    gap: 5px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 768px) {
+    font-size: 16px;
+  }
+  @media screen and (max-width: 670px) {
+    gap: 10px;
+    font-size: 16px;
+  }
+  @media screen and (max-width: 460px) {
+    gap: 5px;
+    font-size: 14px;
+  }
+  @media screen and (max-width: 420px) {
+    gap: 10px;
+    font-size: 16px;
+  }
+}
+
+.temp span {
+  opacity: 0.5;
+}

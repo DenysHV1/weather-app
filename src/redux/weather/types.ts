@@ -24,11 +24,25 @@ export interface ILocation {
   region: string;
 }
 
-export interface IFuture {
-  date: string;
-  hour: IWeatherObj[];
+export interface IFutureDay {
+  date?: string;
+  maxtemp_c?: number;
+  maxtemp_f?: number;
+  mintemp_c?: number;
+  mintemp_f?: number;
+  condition?: {
+    icon?: string;
+  };
 }
 
+export interface IFuture {
+  date: string;
+  date_epoch?: number;
+  hour: IWeatherObj[];
+  day?: IFutureDay | null;
+}
+
+//то что возвращает апи
 export interface WeatherApiResponse {
   location: ILocation;
   current: IWeatherObj;
@@ -37,6 +51,7 @@ export interface WeatherApiResponse {
   };
 }
 
+// результат после преобразования
 export interface ICurrentWeatherResponse {
   current: IWeatherObj;
   day: IWeatherObj[];
@@ -44,20 +59,21 @@ export interface ICurrentWeatherResponse {
   location: ILocation;
 }
 
-export const TemperatureUnit = {
-  C: "C",
-  F: "F",
-} as const;
-export type TemperatureUnit = typeof TemperatureUnit[keyof typeof TemperatureUnit];
 
-
-
+// стейт
 export interface IState {
   isLoading: boolean;
-  isError: boolean;
+  isError: string;
   current: IWeatherObj | null;
   day: IWeatherObj[] | null;
   future: IFuture[] | [];
   location: ILocation | null;
   tempUnit: TemperatureUnit;
 }
+
+
+export const TemperatureUnit = {
+  C: "C",
+  F: "F",
+} as const;
+export type TemperatureUnit = typeof TemperatureUnit[keyof typeof TemperatureUnit];

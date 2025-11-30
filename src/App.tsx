@@ -1,10 +1,11 @@
 import { useEffect } from "react";
-import { Container } from "./components/container/Container";
+import { Container } from "./components/Container/Container";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "./redux/store";
 import { getWeatherByPosition } from "./redux/weather/thunks";
 import { useGeolocation } from "./hooks/useGeolocation";
 import MainWidget from "./components/MainWidget/MainnWidget";
+import SearchWeather from "./components/SearchWeather/SearchWeather";
 
 function App() {
   const { position, error, getLocation } = useGeolocation();
@@ -23,6 +24,7 @@ function App() {
 
   return (
     <Container>
+      <SearchWeather/>
       <MainWidget/>
     </Container>
   );

@@ -27,11 +27,13 @@ export const getWetherByCity = createAsyncThunk<ICurrentWeatherResponse, string,
         location: response.data.location,
       };
 
+
       return data;
 
     } catch (e: unknown) {
       const message =
         e instanceof Error ? e.message : "Request failed";
+
       return thunkAPI.rejectWithValue(message);
     }
   }
