@@ -42,6 +42,11 @@ export interface IFuture {
   day?: IFutureDay | null;
 }
 
+export interface ICityListItem {
+  id: string;
+  name: string;
+}
+
 //то что возвращает апи
 export interface WeatherApiResponse {
   location: ILocation;
@@ -57,6 +62,7 @@ export interface ICurrentWeatherResponse {
   day: IWeatherObj[];
   future: IFuture[];
   location: ILocation;
+  cityResult?: ICityListItem;
 }
 
 
@@ -69,6 +75,7 @@ export interface IState {
   future: IFuture[] | [];
   location: ILocation | null;
   tempUnit: TemperatureUnit;
+  cityList: ICityListItem[];
 }
 
 

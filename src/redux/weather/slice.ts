@@ -9,15 +9,17 @@ const initialState: IState = {
   current: null,
   day: [],
   future: [],
-
   tempUnit: "C",
+  cityList: [],
 };
 
-const handleError = (state: IState, { payload }: PayloadAction<string | undefined>) => {
+const handleError = (
+  state: IState,
+  { payload }: PayloadAction<string | undefined>
+) => {
   state.isLoading = false;
   state.isError = payload ?? "Unknown error";
 };
-
 
 const handlePending = (state: IState) => {
   state.isLoading = true;
@@ -37,10 +39,18 @@ const handleFulfilled = (
   state.current = payload.current;
   state.day = payload.day;
 
-  console.log(payload.future[0].hour);
-
   state.future = payload.future;
 
+  if (payload.cityResult) {
+    const exists = state.cityList.some(
+      ({ name }) =>
+        name.toLowerCase() === payload.cityResult?.name.toLowerCase()
+    );
+
+    state.cityList = exists
+      ? state.cityList
+      : [payload.cityResult, ...state.cityList];
+  }
 };
 
 const weatherSlice = createSlice({
@@ -53,6 +63,9 @@ const weatherSlice = createSlice({
     setFutureData(state: IState, { payload }: PayloadAction<number>) {
       state.day = state.future[payload].hour;
     },
+    deleteListItem (state: IState, { payload }: PayloadAction<string>) {
+      state.cityList = state.cityList.filter(({id}) => id !== payload)
+    }
   },
   extraReducers: (builder) => {
     builder
@@ -67,4 +80,4 @@ const weatherSlice = createSlice({
 });
 
 export const weatherReducer = weatherSlice.reducer;
-export const { setTempUnit, setFutureData } = weatherSlice.actions;
+export const { setTempUnit, setFutureData, deleteListItem } = weatherSlice.actions;

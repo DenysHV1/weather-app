@@ -13,7 +13,7 @@
   justify-content: space-between;
   align-items: flex-start;
   gap: 20px;
-    @media screen and (max-width:400px){
+  @media screen and (max-width: 400px) {
     flex-wrap: wrap;
   }
 }
@@ -70,8 +70,8 @@
   display: flex;
   align-items: center;
   gap: 28px;
-  @media screen and (max-width:400px){
-    flex-wrap: wrap;
+  @media screen and (max-width: 630px) {
+    gap: 10px;
   }
 }
 
@@ -79,30 +79,29 @@
   width: 90px;
   min-width: 90px;
   height: 90px;
-  @media screen and (max-width:435px){
-    width: 120px;
-  min-width: 120px;
-  height: auto;
-  margin-left: -15px;
+  @media screen and (max-width: 630px) {
+    width: 60px;
+    min-width: 60px;
+    height: auto;
+    margin-left: -15px;
   }
 }
 
-.temperature_box{
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 10px;
-  @media screen and (max-width:435px){
-    flex-wrap: wrap;
+.temperature_box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  @media screen and (max-width: 630px) {
+    gap: 10px;
   }
 }
 
 .temperature {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: center;
   gap: 4px;
-  
 }
 
 .temperature p {
@@ -112,7 +111,7 @@
   align-items: center;
   gap: 4px;
   margin: 0;
-  @media screen and (max-width:435px){
+  @media screen and (max-width: 630px) {
     font-size: 30px;
   }
 }
@@ -129,14 +128,14 @@
   font-size: 40px;
   opacity: 0.9;
   background: #1a295f70;
-  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+  box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px,
+    rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
   padding: 10px;
   border-radius: 10px;
-  @media screen and (max-width:435px){
-    font-size: 30px;
+  @media screen and (max-width: 630px) {
+    font-size: 20px;
   }
 }
-
 
 @media (max-width: 600px) {
   .box {

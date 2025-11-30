@@ -28,11 +28,9 @@ const MainWidget = () => {
 
   return (
     <>
-      <div>
-        <div className="main-widget">
-          <CurrentWeather />
-          <DayWeather />
-        </div>
+      <div className="main-widget">
+        <CurrentWeather />
+        <DayWeather />
         <FutureWeather />
       </div>
     </>

@@ -2,23 +2,13 @@ export const swiperBreakpoints = {
   320: {
     slidesPerView: 2,
   },
-  420: {
+  520: {
     slidesPerView: 3,
   },
-
-  670: {
+  950: {
     slidesPerView: 4,
   },
-
-  768: {
-    slidesPerView: 5,
-  },
-
-  1024: {
-    slidesPerView: 6,
-  },
-
   1280: {
-    slidesPerView: 7,
+    slidesPerView: 5,
   },
 };

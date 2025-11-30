@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+import { v4 as uuidv4 } from "uuid";
 import type { ICurrentWeatherResponse, WeatherApiResponse } from "./types";
 
 // const apiKey = import.meta.env.VITE_API_KEY;
@@ -20,11 +21,17 @@ export const getWetherByCity = createAsyncThunk<ICurrentWeatherResponse, string,
         }
       );
 
+      const cityResult = {
+        id: uuidv4(),
+        name: response.data.location.name
+      }  
+
       const data: ICurrentWeatherResponse = {
         current: response.data.current,
         day: response.data.forecast.forecastday[0].hour,
         future: response.data.forecast.forecastday,
         location: response.data.location,
+        cityResult,
       };
 
 

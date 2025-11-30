@@ -1,6 +1,6 @@
 .box {
   width: 100%;
-  margin-bottom: 20px;
+  margin-top: 30px;
 }
 
 .btn_active,
@@ -9,23 +9,8 @@
   border-radius: 0 0 30px 30px;
   padding: 20px 40px;
   margin-top: -10px;
-  @media screen and (max-width: 670px) {
-    padding: 20px 50px;
-  }
-  @media screen and (max-width: 622px) {
-    padding: 20px 40px;
-  }
-  @media screen and (max-width: 565px) {
-    padding: 20px 30px;
-  }
-  @media screen and (max-width: 420px) {
-    padding: 20px 50px;
-  }
-  @media screen and (max-width: 390px) {
-    padding: 20px 40px;
-  }
-  @media screen and (max-width: 355px) {
-    padding: 20px 30px;
+  @media screen and (max-width: 360px) {
+    padding: 20px;
   }
 }
 
@@ -38,44 +23,50 @@
   font-weight: 600;
   white-space: nowrap;
   @media screen and (max-width: 1120px) {
-    font-size: 25px;
+    font-size: 22px;
   }
-  @media screen and (max-width: 860px) {
+  @media screen and (max-width: 1000px) {
     font-size: 18px;
   }
-  @media screen and (max-width: 768px) {
-    font-size: 21px;
+  @media screen and (max-width: 980px) {
+    font-size: 16px;
   }
-  @media screen and (max-width: 670px) {
-    font-size: 24px;
+  @media screen and (max-width: 950px) {
+    font-size: 20px;
   }
-  @media screen and (max-width: 460px) {
-    font-size: 18px;
+  @media screen and (max-width: 570px) {
+    font-size: 16px;
   }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 520px) {
     font-size: 25px;
+  }
+  @media screen and (max-width: 415px) {
+    font-size: 16px;
   }
 }
 
 .icon {
   width: 120px;
-  @media screen and (max-width: 1120px) {
-    width: 110px;
+  @media screen and (max-width: 1100px) {
+    width: 90px;
   }
-  @media screen and (max-width: 860px) {
+  @media screen and (max-width: 1030px) {
     width: 80px;
   }
-  @media screen and (max-width: 768px) {
-    width: 98px;
+  @media screen and (max-width: 980px) {
+    width: 60px;
   }
-  @media screen and (max-width: 670px) {
-    width: 100px;
-  }
-  @media screen and (max-width: 460px) {
+  @media screen and (max-width: 950px) {
     width: 80px;
   }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 570px) {
+    width: 60px;
+  }
+  @media screen and (max-width: 520px) {
     width: 100px;
+  }
+  @media screen and (max-width: 415px) {
+    width: 80px;
   }
 }
 
@@ -86,24 +77,25 @@
   gap: 10px;
   font-size: 16px;
   font-weight: 600;
-  @media screen and (max-width: 860px) {
+  @media screen and (max-width: 1100px) {
     gap: 5px;
     font-size: 14px;
   }
-  @media screen and (max-width: 768px) {
-    font-size: 16px;
-  }
-  @media screen and (max-width: 670px) {
+  @media screen and (max-width: 950px) {
     gap: 10px;
     font-size: 16px;
   }
-  @media screen and (max-width: 460px) {
+  @media screen and (max-width: 840px) {
     gap: 5px;
     font-size: 14px;
   }
-  @media screen and (max-width: 420px) {
+  @media screen and (max-width: 520px) {
     gap: 10px;
     font-size: 16px;
+  }
+  @media screen and (max-width: 415px) {
+    gap: 5px;
+    font-size: 14px;
   }
 }
 
