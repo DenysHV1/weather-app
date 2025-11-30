@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { Container } from "./components/Container/Container";
+import { Container } from "./components/container/Container";
 import { useDispatch } from "react-redux";
 import type { AppDispatch } from "./redux/store";
 import { getWeatherByPosition } from "./redux/weather/thunks";
