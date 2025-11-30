@@ -5,6 +5,7 @@ type ContainerProps = {
   children: ReactNode;
 };
 
+
 export const Container = ({ children }: ContainerProps) => {
   return <div className={s.container}>{children}</div>;
 };
