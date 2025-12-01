@@ -39,27 +39,3 @@ https://weather-app-nine-gamma-84.vercel.app/
 ## Environment Variables
 - VITE_API_KEY=...
 
-## Project Structure
-src/
-├── components/
-│   ├── CityHistory/
-│   ├── CityItem/
-│   ├── Container/
-│   ├── DeleteModal/
-│   ├── ErrorComponent/
-│   ├── Loader/
-│   ├── SearchWeather/
-│   └── MainWidget/
-│       ├── CurrentWeather/
-│       ├── DayWeather/
-│       └── FutureWeather/
-│
-├── hooks/
-│
-├── redux/
-│   └── weather/
-│
-├── types/
-│
-└── utils/
-
