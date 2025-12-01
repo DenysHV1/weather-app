@@ -79,13 +79,14 @@
 }
 
 .iconCell p {
-  font-size: 12px;
+  font-size: 11px;
   background: rgba(1, 87, 127, 0.721);
   padding: 3px;
   border-radius: 5px;
   margin-top: 5px auto;
   border-top: 1px solid black;
-  min-width: 50px;
+  min-width: 45px;
+  white-space: nowrap;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -93,7 +94,7 @@
 }
 
 .iconCell p span {
-  font-size: 10px;
+  font-size: 9px;
   opacity: 0.6;
   user-select: none;
   -webkit-user-select: none;
