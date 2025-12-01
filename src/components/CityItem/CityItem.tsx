@@ -16,7 +16,7 @@ const CityItem = ({ name, id, idx, setModal, setListId }: IProps) => {
   const dispatch = useDispatch<AppDispatch>();
 
   return (
-    <li key={id} className={s.list_item}>
+    <>
       <div
         onClick={() => dispatch(getWetherByCity(name))}
         className={s.list_item_inner}
@@ -34,7 +34,7 @@ const CityItem = ({ name, id, idx, setModal, setListId }: IProps) => {
       >
         <IoClose />
       </button>
-    </li>
+    </>
   );
 };
 

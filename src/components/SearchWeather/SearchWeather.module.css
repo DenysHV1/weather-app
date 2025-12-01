@@ -72,3 +72,10 @@
   opacity: 0.4;
   cursor: default;
 }
+
+.logo{
+  max-width: 80px;
+  padding: 10px;
+  border-radius: 30px;
+  background: linear-gradient(135deg, #bde9ff5a, #408dff77);
+}

@@ -12,8 +12,6 @@ function App() {
   const { position, error, getLocation } = useGeolocation();
   const dispatch = useDispatch<AppDispatch>();
 
-  console.log(error);
-
   useEffect(() => {
     getLocation();
   }, [getLocation]);
@@ -32,6 +30,7 @@ function App() {
         <MainWidget />
         <CityHistory/>
       </main>
+      {error && <div className="geo-error">{error}</div>}
     </Container>
   );
 }

@@ -39,8 +39,9 @@ const handleFulfilled = (
   state.current = payload.current;
   state.day = payload.day;
 
+  
   state.future = payload.future;
-
+  console.log(state.future);
   if (payload.cityResult) {
     const exists = state.cityList.some(
       ({ name }) =>

@@ -4,6 +4,8 @@ import s from "./SearchWeather.module.css";
 import { getWetherByCity } from "../../redux/weather/thunks";
 import type { AppDispatch } from "../../redux/store";
 
+import logo from '../../assets/logo.png'
+
 const SearchWeather = () => {
   const [query, setQuery] = useState<string>("");
   const dispatch = useDispatch<AppDispatch>();
@@ -20,11 +22,13 @@ const SearchWeather = () => {
     }
 
     dispatch(getWetherByCity(trimmedQuery));
+
+    setQuery("");
   };
 
   return (
     <header className={s.box}>
-      <h1 className={s.title}>Weather App</h1>
+      <img className={s.logo} src={logo} alt="logo" />
 
       <form onSubmit={handleSubmit} className={s.form}>
         <input

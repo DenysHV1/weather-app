@@ -11,6 +11,7 @@ export interface IWeatherObj {
   last_updated: string;
   time?: string;
   time_epoch?: number;
+  precip_mm: number
 }
 
 interface IDay {

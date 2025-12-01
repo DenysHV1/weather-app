@@ -1,8 +1,19 @@
 import s from "./DayWeather.module.css";
 import { useSelector } from "react-redux";
 import { selectDay, selectTempUnit } from "../../../redux/weather/selectors";
-import {TemperatureUnit, type IWeatherObj} from "../../../redux/weather/types";
-import {AreaChart, Area, XAxis, YAxis,Tooltip, ResponsiveContainer, LabelList,} from "recharts";
+import {
+  TemperatureUnit,
+  type IWeatherObj,
+} from "../../../redux/weather/types";
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  Tooltip,
+  ResponsiveContainer,
+  LabelList,
+} from "recharts";
 
 interface ChartPoint {
   id: number;
@@ -10,6 +21,8 @@ interface ChartPoint {
   temp: number;
   label: number | null;
   icon: string;
+  wind: number;
+  precip: number;
 }
 
 const DayWeather = () => {
@@ -19,12 +32,14 @@ const DayWeather = () => {
   const getChartData = (): ChartPoint[] => {
     return day?.map((item, index) => {
       const temp = tempUnit === TemperatureUnit.C ? item.temp_c : item.temp_f;
-	  return {
+      return {
         id: item.time_epoch ?? index,
         time: item.time ? item.time.slice(11, 16) : "",
         temp,
         label: temp,
         icon: item.condition?.icon ?? "",
+        wind: item.wind_kph,
+        precip: item?.precip_mm,
       };
     });
   };
@@ -37,7 +52,7 @@ const DayWeather = () => {
           style={{ width: getChartData().length * 55 }}
         >
           <div className={s.chartContainer}>
-            <ResponsiveContainer width="100%" height={180}>
+            <ResponsiveContainer width="100%" height={220}>
               <AreaChart
                 data={getChartData()}
                 margin={{ top: 30, right: 20, left: 20, bottom: 50 }}
@@ -51,9 +66,31 @@ const DayWeather = () => {
 
                 <Area
                   type="monotone"
+                  dataKey="precip"
+                  stroke="#4fc2f7b9"
+                  strokeWidth={1}
+                  fill="rgba(79,195,247,0.2)"
+                >
+                  <LabelList
+                    dataKey="precip"
+                    position="top"
+                    formatter={(v) => {
+                      const num = Number(v);
+                      return num > 0 ? `${num}mm` : "";
+                    }}
+                    style={{
+                      fill: "#4fc2f7",
+                      fontSize: 10,
+                      fontWeight: 400,
+                    }}
+                  />
+                </Area>
+
+                <Area
+                  type="monotone"
                   dataKey="temp"
                   stroke="#9fc0ff"
-                  strokeWidth={3}
+                  strokeWidth={2}
                   fill="url(#tempGradient)"
                 >
                   <LabelList
@@ -61,7 +98,7 @@ const DayWeather = () => {
                     position="top"
                     formatter={(v) => (v == null ? "" : `${v}°`)}
                     style={{
-                      fill: "#fff",
+                      fill: "#ffffffc5",
                       fontSize: 14,
                       fontWeight: 500,
                       textShadow: "0 0 4px rgba(0,0,0,0.6)",
@@ -79,7 +116,11 @@ const DayWeather = () => {
 
                 <YAxis hide />
 
-                <Tooltip formatter={(v: number) => `${v}°`} />
+                <Tooltip
+                  formatter={(value: number, name) =>
+                    name === "precip" ? `${value} mm` : `${value}°`
+                  }
+                />
               </AreaChart>
             </ResponsiveContainer>
           </div>
@@ -88,10 +129,13 @@ const DayWeather = () => {
             {getChartData().map((p) => (
               <div key={p.id} className={s.iconCell} style={{ width: 55 }}>
                 <img src={p.icon} alt="icon" />
+                <p>
+                  {p.wind}
+                  <span> km/h</span>
+                </p>
               </div>
             ))}
           </div>
-		  
         </div>
       </div>
     </div>

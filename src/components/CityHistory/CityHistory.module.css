@@ -88,3 +88,23 @@
 }
 
 
+.list_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 10px;
+  background-color: #262f4d;
+  padding: 5px;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  border-radius: 10px;
+  @media screen and (max-width: 855px) {
+    padding: 2px;
+    gap: 3px;
+  }
+  @media screen and (max-width: 768px) {
+    padding: 5px;
+    gap: 10px;
+  }
+}
+
