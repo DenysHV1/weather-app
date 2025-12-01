@@ -23,18 +23,13 @@ function App() {
     );
   }, [position, dispatch]);
 
-  const retryLocation = () => {
-    getLocation();
-  };
-
   return (
     <Container>
       <SearchWeather />
       <main className="main">
-        <MainWidget />
+        <MainWidget error={error} />
         <CityHistory />
       </main>
-      {error && <button onClick={retryLocation} className="geo-error-btn">{"You have disabled access to geodata!"}</button>}
     </Container>
   );
 }
