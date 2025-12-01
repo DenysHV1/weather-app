@@ -1,27 +1,26 @@
-.box{
-	width: 100%;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	flex-wrap: wrap;
-	gap: 30px;
-	background: #2f3341;
-	padding: 20px 30px;
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
-	margin-top: 20px;
-	border-radius: 30px;
+.box {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  background: #2f3341;
+  padding: 20px 30px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  margin-top: 20px;
+  border-radius: 30px;
 }
-
 
 .title {
   font-size: 32px;
   font-weight: 700;
 }
 
-.form{
-	display: flex;
-	align-items: center;
-	gap: 10px;
+.form {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
 .input {
@@ -36,7 +35,7 @@
   outline: none;
   box-shadow: 0 0 0 2px transparent;
   @media screen and (max-width: 440px) {
-	width: 100%;
+    width: 100%;
   }
 }
 
@@ -73,7 +72,7 @@
   cursor: default;
 }
 
-.logo{
+.logo {
   max-width: 80px;
   padding: 10px;
   border-radius: 30px;

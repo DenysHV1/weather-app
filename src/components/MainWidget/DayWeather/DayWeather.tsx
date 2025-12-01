@@ -98,6 +98,10 @@ const DayWeather = () => {
                           fill: "#4fc2f7",
                           fontSize: 10,
                           fontWeight: 400,
+                          userSelect: "none",
+                          WebkitUserSelect: "none",
+                          MozUserSelect: "none",
+                          msUserSelect: "none",
                         }}
                       />
                     </Area>
@@ -118,6 +122,10 @@ const DayWeather = () => {
                           fontSize: 14,
                           fontWeight: 500,
                           textShadow: "0 0 4px rgba(0,0,0,0.6)",
+                          userSelect: "none",
+                          WebkitUserSelect: "none",
+                          MozUserSelect: "none",
+                          msUserSelect: "none",
                         }}
                       />
                     </Area>
@@ -127,7 +135,7 @@ const DayWeather = () => {
                       interval={0}
                       axisLine={false}
                       tickLine={false}
-                      tick={{ fill: "#fff", fontSize: 12 }}
+                      tick={{ fill: "#ffffffdc", fontSize: 12 }}
                     />
 
                     <YAxis hide />

@@ -1,12 +1,10 @@
 .box {
-	position: relative;
+  position: relative;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   min-height: inherit;
-
   max-height: 420px;
-
   width: 28%;
   background: #2f3341;
   border-radius: 30px;
@@ -42,11 +40,19 @@
   margin: 0 auto;
   max-width: 400px;
   opacity: 0.5;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
 }
 
 .empty_box img {
   width: 100%;
   height: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
   @media screen and (max-width: 768px) {
     width: 280px;
   }
@@ -87,7 +93,6 @@
   scrollbar-color: #3a4768 #2a2e3a;
 }
 
-
 .list_item {
   display: flex;
   align-items: center;
@@ -107,4 +112,3 @@
     gap: 10px;
   }
 }
-

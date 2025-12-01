@@ -2,6 +2,7 @@ import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { getWeatherByPosition, getWetherByCity } from "./thunks";
 import type { ICurrentWeatherResponse, IState, TemperatureUnit } from "./types";
 
+//!---------------------------
 const initialState: IState = {
   isLoading: false,
   isError: "",
@@ -12,14 +13,7 @@ const initialState: IState = {
   tempUnit: "C",
   cityList: [],
 };
-
-const handleError = (
-  state: IState,
-  { payload }: PayloadAction<string | undefined>
-) => {
-  state.isLoading = false;
-  state.isError = payload ?? "Unknown error";
-};
+//!---------------------------
 
 const handlePending = (state: IState) => {
   state.isLoading = true;
@@ -28,6 +22,14 @@ const handlePending = (state: IState) => {
   state.current = null;
   state.day = [];
   state.future = [];
+};
+
+const handleError = (
+  state: IState,
+  { payload }: PayloadAction<string | undefined>
+) => {
+  state.isLoading = false;
+  state.isError = payload ?? "Unknown error";
 };
 
 const handleFulfilled = (
@@ -39,7 +41,6 @@ const handleFulfilled = (
   state.current = payload.current;
   state.day = payload.day;
 
-  
   state.future = payload.future;
   if (payload.cityResult) {
     const exists = state.cityList.some(
@@ -53,6 +54,8 @@ const handleFulfilled = (
   }
 };
 
+//!---------------------------
+
 const weatherSlice = createSlice({
   name: "weather",
   initialState,
@@ -63,9 +66,9 @@ const weatherSlice = createSlice({
     setFutureData(state: IState, { payload }: PayloadAction<number>) {
       state.day = state.future[payload].hour;
     },
-    deleteListItem (state: IState, { payload }: PayloadAction<string>) {
-      state.cityList = state.cityList.filter(({id}) => id !== payload)
-    }
+    deleteListItem(state: IState, { payload }: PayloadAction<string>) {
+      state.cityList = state.cityList.filter(({ id }) => id !== payload);
+    },
   },
   extraReducers: (builder) => {
     builder
@@ -80,4 +83,5 @@ const weatherSlice = createSlice({
 });
 
 export const weatherReducer = weatherSlice.reducer;
-export const { setTempUnit, setFutureData, deleteListItem } = weatherSlice.actions;
+export const { setTempUnit, setFutureData, deleteListItem } =
+  weatherSlice.actions;

@@ -19,15 +19,15 @@ const CityHistory = () => {
           <ul className={s.list}>
             {cityList.map(({ name, id }, idx) => {
               return (
-              <li key={id} className={s.list_item}>
-                <CityItem
-                  name={name}
-                  id={id}
-                  idx={idx}
-                  setModal={setModal}
-                  setListId={setListId}
-                />
-              </li>
+                <li key={id} className={s.list_item}>
+                  <CityItem
+                    name={name}
+                    id={id}
+                    idx={idx}
+                    setModal={setModal}
+                    setListId={setListId}
+                  />
+                </li>
               );
             })}
           </ul>

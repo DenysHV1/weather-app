@@ -4,7 +4,7 @@ import s from "./SearchWeather.module.css";
 import { getWetherByCity } from "../../redux/weather/thunks";
 import type { AppDispatch } from "../../redux/store";
 
-import logo from '../../assets/logo.png'
+import logo from "../../assets/logo.png";
 
 const SearchWeather = () => {
   const [query, setQuery] = useState<string>("");
@@ -38,11 +38,7 @@ const SearchWeather = () => {
           onChange={handleChange}
           placeholder="Search city..."
         />
-        <button
-          className={s.button}
-          type="submit"
-          disabled={!query.trim()}
-        >
+        <button className={s.button} type="submit" disabled={!query.trim()}>
           Search
         </button>
       </form>
