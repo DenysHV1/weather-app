@@ -157,6 +157,10 @@ button {
   cursor: pointer;
   transition: opacity 0.2s ease;
   margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
 
 .geo-error-btn:hover {

@@ -34,7 +34,7 @@ function App() {
         <MainWidget />
         <CityHistory />
       </main>
-      {error && <button onClick={retryLocation} className="geo-error-btn">{"Get my weather"}</button>}
+      {error && <button onClick={retryLocation} className="geo-error-btn">{"You have disabled access to geodata!"}</button>}
     </Container>
   );
 }
