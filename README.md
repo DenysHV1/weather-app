@@ -1,10 +1,10 @@
 # Weather App
-This application allows you to check the weather for your current location or by entering a city name.
+A modern weather application that allows users to check the current weather based on geolocation or search for any city worldwide.
 
-## Demo
+## 🚀 Demo
 https://weather-app-nine-gamma-84.vercel.app/
 
-Features
+## ✨ Features
 
 - Powered by weatherapi.com
 - Fully responsive UI that adapts to all screen sizes and resolutions
@@ -15,7 +15,7 @@ Features
 - Current weather by geolocation
 - Search history with the ability to delete individual entries
 
-## Tech Stack
+## 🛠️ Tech Stack
 - React + Vite
 - TypeScript
 
@@ -41,20 +41,25 @@ Features
 
 ## Project Structure
 src/
-  components/
-    CityHistory/
-    CityItem/
-    Container/
-    DeleteModal/
-    ErrorComponent/
-    Loader/
-    SearchWeather/
-    MainWidget/
-      CurrentWeather/
-      DayWeather/
-      FutureWeather/
-  hooks/
-  redux/
-    weather/
-  types/
-  utils/
+├── components/
+│   ├── CityHistory/
+│   ├── CityItem/
+│   ├── Container/
+│   ├── DeleteModal/
+│   ├── ErrorComponent/
+│   ├── Loader/
+│   ├── SearchWeather/
+│   └── MainWidget/
+│       ├── CurrentWeather/
+│       ├── DayWeather/
+│       └── FutureWeather/
+│
+├── hooks/
+│
+├── redux/
+│   └── weather/
+│
+├── types/
+│
+└── utils/
+
