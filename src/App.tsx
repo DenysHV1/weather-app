@@ -17,11 +17,14 @@ function App() {
   }, [getLocation]);
 
   useEffect(() => {
+    if(error){
+      console.error(error)
+    }
     if (!position) return;
     dispatch(
       getWeatherByPosition(`${position.latitude},${position.longitude}`)
     );
-  }, [position, dispatch]);
+  }, [position, dispatch, error]);
 
   return (
     <Container>
@@ -30,7 +33,6 @@ function App() {
         <MainWidget />
         <CityHistory/>
       </main>
-      {error && <div className="geo-error">{error}</div>}
     </Container>
   );
 }
