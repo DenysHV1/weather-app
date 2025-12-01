@@ -8,12 +8,14 @@ const BASE_URL = "https://api.weatherapi.com/v1";
 
 export const getWetherByCity = createAsyncThunk<ICurrentWeatherResponse, string, { rejectValue: string }>("wether/getWetherByCity", async (city, thunkAPI) => {
     try {
+      const safeCity = city.trim().replace(/[^\p{L}\p{N}\s,-]/gu, "");
+
       const response = await axios.get<WeatherApiResponse>(
         `${BASE_URL}/forecast.json`,
         {
           params: {
             key: apiKey,
-            q: city,
+            q: safeCity,
             days: 7,
             lang: "en",
           },

@@ -5,6 +5,7 @@ import { getWetherByCity } from "../../redux/weather/thunks";
 import type { AppDispatch } from "../../redux/store";
 
 import logo from "../../assets/logo.png";
+import iziToast from "izitoast";
 
 const SearchWeather = () => {
   const [query, setQuery] = useState<string>("");
@@ -21,8 +22,26 @@ const SearchWeather = () => {
       return;
     }
 
-    dispatch(getWetherByCity(trimmedQuery));
-
+    dispatch(getWetherByCity(trimmedQuery))
+      .unwrap()
+      .then((status) => {
+        if (status) {
+          iziToast.success({
+            timeout: 2000,
+            title: "Success",
+            message: "Weather data loaded successfully.",
+            position: "bottomLeft",
+          });
+        }
+      })
+      .catch((err) => {
+        iziToast.error({
+          timeout: 2000,
+          title: "Error",
+          message: err,
+          position: "bottomLeft",
+        });
+      });
     setQuery("");
   };
 
