@@ -25,46 +25,52 @@ const FutureWeather = () => {
     tempUnit === "C" ? `↑${day.maxtemp_c}°` : `↑${day.maxtemp_f}°`;
 
   return (
-    <div className={s.box}>
-      <Swiper
-        modules={[Navigation]}
-        spaceBetween={10}
-        slidesPerView={3}
-        navigation
-        breakpoints={swiperBreakpoints}
-      >
-        {future?.length &&
-          future.map(({ date, day, date_epoch }, idx) => {
-            if (!day) return null;
+    <>
+      {future.length > 0 && (
+        <div className={s.box}>
+          <Swiper
+            modules={[Navigation]}
+            spaceBetween={10}
+            slidesPerView={3}
+            navigation
+            breakpoints={swiperBreakpoints}
+          >
+            {future?.length &&
+              future.map(({ date, day, date_epoch }, idx) => {
+                if (!day) return null;
 
-            return (
-              <SwiperSlide key={date_epoch}>
-                <button
-                  type="button"
-                  onClick={() => {
-                    setActiveIndex(idx);
-                    dispatch(setFutureData(idx));
-                  }}
-                  className={clsx(idx === activeIndex ? s.btn_active : s.btn)}
-                >
-                  <span className={s.day}>{dateConvertor(date)}</span>
+                return (
+                  <SwiperSlide key={date_epoch}>
+                    <button
+                      type="button"
+                      onClick={() => {
+                        setActiveIndex(idx);
+                        dispatch(setFutureData(idx));
+                      }}
+                      className={clsx(
+                        idx === activeIndex ? s.btn_active : s.btn
+                      )}
+                    >
+                      <span className={s.day}>{dateConvertor(date)}</span>
 
-                  <img
-                    className={s.icon}
-                    src={day.condition?.icon || ""}
-                    alt="icon"
-                  />
+                      <img
+                        className={s.icon}
+                        src={day.condition?.icon || ""}
+                        alt="icon"
+                      />
 
-                  <span className={s.temp}>
-                    {setTemp(day)}
-                    <span>{setTemp2(day)}</span>
-                  </span>
-                </button>
-              </SwiperSlide>
-            );
-          })}
-      </Swiper>
-    </div>
+                      <span className={s.temp}>
+                        {setTemp(day)}
+                        <span>{setTemp2(day)}</span>
+                      </span>
+                    </button>
+                  </SwiperSlide>
+                );
+              })}
+          </Swiper>
+        </div>
+      )}
+    </>
   );
 };
 

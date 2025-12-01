@@ -145,6 +145,20 @@ button {
   }
 }
 
-.geo-error{
+.geo-error-btn {
   color: #fff;
+  font-size: 12px;
+  opacity: 0.6;
+  padding: 4px 8px;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: inherit;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  margin-bottom: 20px;
+}
+
+.geo-error-btn:hover {
+  opacity: 1;
 }

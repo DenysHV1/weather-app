@@ -23,9 +23,9 @@ function App() {
     );
   }, [position, dispatch]);
 
-  if (error) {
-    console.error(error);
-  }
+  const retryLocation = () => {
+    getLocation();
+  };
 
   return (
     <Container>
@@ -34,7 +34,7 @@ function App() {
         <MainWidget />
         <CityHistory />
       </main>
-      {error && <div className="geo-error">{error}</div>}
+      {error && <button onClick={retryLocation} className="geo-error-btn">{"Get my weather"}</button>}
     </Container>
   );
 }
