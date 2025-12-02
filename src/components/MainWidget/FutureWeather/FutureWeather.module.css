@@ -7,9 +7,9 @@
 .btn {
   background: #2f3341;
   border-radius: 30px;
-  padding: 20px 40px;
+  padding: 10px 40px;
   @media screen and (max-width: 360px) {
-    padding: 20px;
+    padding: 10px 20px;
   }
 }
 
