@@ -10,6 +10,10 @@
   box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
   margin-top: 20px;
   border-radius: 30px;
+  min-height: 96.7px;
+  @media screen and (max-width:553px){
+    min-height: 170px;
+  }
 }
 
 .title {
@@ -74,7 +78,9 @@
 
 .logo {
   max-width: 80px;
+  min-width: 80px;
   padding: 10px;
   border-radius: 30px;
+  min-height: 56.7px;
   background: linear-gradient(135deg, #bde9ff5a, #408dff77);
 }
