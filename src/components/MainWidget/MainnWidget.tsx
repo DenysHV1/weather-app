@@ -37,11 +37,9 @@ const MainWidget = ({ error }: IProps) => {
 
   if (error && !location) {
     return (
-      <>
-        <div className="main-widget">
-          <ErrorComponent message="Geolocation is disabled in your browser!" />
-        </div>
-      </>
+      <div className="main-widget">
+        <ErrorComponent message="Geolocation is disabled in your browser!" />
+      </div>
     );
   }
 

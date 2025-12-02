@@ -17,7 +17,7 @@ const SearchWeather = () => {
 
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const trimmedQuery = query.trim();
+    const trimmedQuery = query.trim().replace(/[^\p{L}\p{N}\s,-]/gu, "");
     if (!trimmedQuery) {
       return;
     }
@@ -57,7 +57,14 @@ const SearchWeather = () => {
           onChange={handleChange}
           placeholder="Search city..."
         />
-        <button className={s.button} type="submit" disabled={!query.trim()}>
+        <button
+          className={s.button}
+          type="submit"
+          disabled={
+            !query.trim().replace(/[^\p{L}\p{N}\s,-]/gu, "") ||
+            !isNaN(Number(query))
+          }
+        >
           Search
         </button>
       </form>
